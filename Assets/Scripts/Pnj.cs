@@ -33,6 +33,15 @@ public class Pnj : MonoBehaviour
         //Death();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Oxygene"))
+        {
+            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
+            else Death();
+        }
+    }
+
 
     public void Move()
     {
@@ -68,7 +77,7 @@ public class Pnj : MonoBehaviour
         timerD += Time.deltaTime;
         if(timerD >= timeDead)
         {
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
     

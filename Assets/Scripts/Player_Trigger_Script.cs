@@ -13,6 +13,7 @@ public class Player_Trigger_Script : MonoBehaviour
     void Start()
     {
         oxygene_Script = FindObjectOfType<Oxygene_Script>();
+        porte_Script = FindObjectOfType<Porte_Script>();
     }
 
     // Update is called once per frame
@@ -23,14 +24,29 @@ public class Player_Trigger_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("Porte")) porte_Script.Ouverte = true;
 
-        if (other.tag == "Oxygene")
+
+
+        if (other.CompareTag("Oxygene"))
         {
-            if (oxygene_Script.Oxygene) UnityEngine.Debug.Log("Vivant");
+            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
             else UnityEngine.Debug.Log("Mort");
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Oxygene"))
+        {
+            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
+            else UnityEngine.Debug.Log("Mort");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Porte")) porte_Script.Ouverte = false;
     }
 
 }
