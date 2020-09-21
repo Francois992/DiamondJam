@@ -183,6 +183,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rewired Input Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8992745480152827861, guid: 7056761a6e7fd65418e732279e84ec48, type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992745480152827861, guid: 7056761a6e7fd65418e732279e84ec48, type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[4]._actionId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992745480152827861, guid: 7056761a6e7fd65418e732279e84ec48, type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[4]._elementType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992745480152827861, guid: 7056761a6e7fd65418e732279e84ec48, type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[4]._elementIdentifierId
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992745480152827861, guid: 7056761a6e7fd65418e732279e84ec48, type: 3}
+      propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[4]._keyboardKeyCode
+      value: 101
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7056761a6e7fd65418e732279e84ec48, type: 3}
 --- !u!1 &1097887266
