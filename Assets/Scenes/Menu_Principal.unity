@@ -2814,7 +2814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ASTRONOPHOBIA
+  m_Text: A S T R O N O P H O B I A
 --- !u!222 &1596170460
 CanvasRenderer:
   m_ObjectHideFlags: 0
