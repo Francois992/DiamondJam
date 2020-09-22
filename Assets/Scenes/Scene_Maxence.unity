@@ -449,7 +449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Activation: 0
-  ObjetInteragir: {fileID: 1612511743}
   sas_Script: {fileID: 0}
 --- !u!114 &181012959
 MonoBehaviour:
@@ -1800,7 +1799,7 @@ MonoBehaviour:
   moveSpeed: 10
   gravity: -9
   playerId: 1
-  enVie: 0
+  enVie: 1
   groundCheck: {fileID: 0}
   groundMask:
     serializedVersion: 2
@@ -2296,7 +2295,7 @@ MonoBehaviour:
   moveSpeed: 10
   gravity: -9
   playerId: 0
-  enVie: 0
+  enVie: 1
   groundCheck: {fileID: 0}
   groundMask:
     serializedVersion: 2
