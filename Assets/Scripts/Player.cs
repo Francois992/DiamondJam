@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     private CharacterController controller;
 
+    [SerializeField] private int playerId = 0;
+
     private Rewired.Player playerController ;
 
     private Vector3 velocity;
@@ -29,7 +31,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerController = ReInput.players.GetPlayer(0);
+        playerController = ReInput.players.GetPlayer(playerId);
 
         controller = GetComponent<CharacterController>();
     }
@@ -87,7 +89,7 @@ public class Player : MonoBehaviour
                 {
                     LevierScript interactible = hit.transform.GetComponent<LevierScript>();
 
-                    interactible.Activation = true;
+                    //interactible.Activation = true;
                 }
  
             }
