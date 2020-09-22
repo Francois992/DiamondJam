@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int playerId = 0;
 
+    public bool enVie;
+
     private Rewired.Player playerController ;
 
     private Vector3 velocity;
@@ -27,6 +29,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+
+    GameManager gameManager;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +38,10 @@ public class Player : MonoBehaviour
         playerController = ReInput.players.GetPlayer(playerId);
 
         controller = GetComponent<CharacterController>();
+
+        gameManager = FindObjectOfType<GameManager>();
+
+        enVie = true;
     }
 
     // Update is called once per frame
