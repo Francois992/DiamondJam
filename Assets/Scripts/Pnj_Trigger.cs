@@ -12,7 +12,7 @@ public class Pnj_Trigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(pnj.transform.position.x, 0, pnj.transform.position.z);
+        transform.position = new Vector3(pnj.transform.position.x, pnj.transform.position.y, pnj.transform.position.z);
         sphere = GetComponent<SphereCollider>();
         this.transform.localScale = scale;
     }
@@ -26,7 +26,7 @@ public class Pnj_Trigger : MonoBehaviour
 
     public void Follow()
     {
-        transform.position = new Vector3(pnj.transform.position.x, 0, pnj.transform.position.z);
+        transform.position = new Vector3(pnj.transform.position.x, pnj.transform.position.y, pnj.transform.position.z);
     }
     
 
