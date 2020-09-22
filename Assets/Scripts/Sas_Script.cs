@@ -9,9 +9,13 @@ public class Sas_Script : MonoBehaviour
     private float initialPosY;
     private float finalPosY;
 
+    [SerializeField] private Oxygene_Script OxygeneZone = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(OxygeneZone);
+
         initialPosY = transform.localPosition.y;
         finalPosY = transform.localPosition.y + transform.localScale.y;
     }
@@ -21,12 +25,14 @@ public class Sas_Script : MonoBehaviour
     {
         if (Ouvert)
         {
-            transform.DOMoveY(finalPosY, 0.5f);
+            transform.DOLocalMoveY(finalPosY, 0.5f);
+            if( OxygeneZone != null)OxygeneZone.Oxygene = false;
         }
 
         else
         {
-            transform.DOMoveY(initialPosY, 0.5f);
+            transform.DOLocalMoveY(initialPosY, 0.5f);
+            if (OxygeneZone != null)OxygeneZone.Oxygene = true;
         }
         
     }

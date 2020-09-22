@@ -25,7 +25,6 @@ public class Player_Trigger_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Porte")) porte_Script.Ouvert = true;
 
         if (other.CompareTag("Antidode")) SceneManager.LoadScene("Scene_Victoire");
 
@@ -35,7 +34,7 @@ public class Player_Trigger_Script : MonoBehaviour
             else gameObject.GetComponent<Player>().enVie = false;
         }
 
-        if (other.CompareTag("Pnj") || other.CompareTag("Player"))
+        if (other.CompareTag("Pnj") || (other.CompareTag("Player") && gameObject.GetComponent<Player>().playerId != other.GetComponent<Player>().playerId))
         {
             gameObject.GetComponent<Player>().enVie = false;
         }
@@ -43,6 +42,8 @@ public class Player_Trigger_Script : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("Porte")) porte_Script.Ouvert = true;
+
         if (other.CompareTag("Oxygene"))
         {
             if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
