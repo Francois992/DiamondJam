@@ -25,7 +25,6 @@ public class Player_Trigger_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
 
         if (other.CompareTag("Antidode")) SceneManager.LoadScene("Scene_Victoire");
 
