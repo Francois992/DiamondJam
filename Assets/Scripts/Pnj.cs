@@ -8,26 +8,24 @@ public class Pnj : MonoBehaviour
     
     public Vector3 position;
     public float timeDead = 2f;
-    public float timerD = 0f;
-
-    public Vector3 posDep;
-    public Vector3 posArr;
-
+    private float timerD = 0f;
+    
     public float timeMove = 1.5f;
-    public float timerM = 0f;
+    private float timerM = 0f;
     public bool move = true;
     public bool right = true;
 
     public List<GameObject> destination;
     public List<float> stay;
     public NavMeshAgent agent;
-    public int dest = 0;
-    public float distReaction = 5f;
-    public float distSeparation;
+    private int dest = 0;
+    public float distReaction = 2f;
+    private float distSeparation;
+    
+    private float timerW = 0f;
+    private int indexWait = 0;
 
-    public float timeWait = 3f;
-    public float timerW = 0f;
-    public int indexWait = 0;
+    public bool attracted = false;
 
     public bool dead = false;
 
@@ -41,7 +39,10 @@ public class Pnj : MonoBehaviour
     void Update()
     {
         distSeparation = Vector3.Distance(transform.position, destination[dest].transform.position);
-        Move();
+        if (!attracted)
+        {
+            Move();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -87,7 +88,15 @@ public class Pnj : MonoBehaviour
     }
     
     
-
+    public void Attract(Vector3 position)
+    {
+        attracted = true;
+        agent.SetDestination(position);
+    }
     
+    public void EndAttract()
+    {
+        attracted = false;
+    }
 
 }
