@@ -34,7 +34,7 @@ public class Player_Trigger_Script : MonoBehaviour
             else gameObject.GetComponent<Player>().enVie = false;
         }
 
-        if (other.CompareTag("Pnj") || other.CompareTag("Player"))
+        if (other.CompareTag("Pnj") || (other.CompareTag("Player") && gameObject.GetComponent<Player>().playerId != other.GetComponent<Player>().playerId))
         {
             gameObject.GetComponent<Player>().enVie = false;
         }

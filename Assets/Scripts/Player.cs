@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     private CharacterController controller;
 
-    [SerializeField] private int playerId = 0;
+    public int playerId = 0;
 
     public bool enVie;
 
