@@ -21,12 +21,12 @@ public class Sas_Script : MonoBehaviour
     {
         if (Ouvert)
         {
-            transform.DOMoveY(finalPosY, 0.5f);
+            transform.DOLocalMoveY(finalPosY, 0.5f);
         }
 
         else
         {
-            transform.DOMoveY(initialPosY, 0.5f);
+            transform.DOLocalMoveY(initialPosY, 0.5f);
         }
         
     }

@@ -6,7 +6,7 @@ using DG.Tweening;
 public class LevierScript : MonoBehaviour
 {
     public bool Activation = false;
-    [SerializeField] private Transform ObjetInteragir;
+    
     [SerializeField] private Sas_Script sas_Script;
 
     // Start is called before the first frame update
