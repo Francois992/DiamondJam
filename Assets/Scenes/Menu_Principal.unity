@@ -2433,7 +2433,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: T r i s t a n t   S O L A R O  -  P r o d u c e r
+  m_Text: T r i s t a n   S O L A R O  -  P r o d u c e r
 --- !u!222 &1435273974
 CanvasRenderer:
   m_ObjectHideFlags: 0
