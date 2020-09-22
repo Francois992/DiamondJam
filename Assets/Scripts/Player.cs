@@ -46,8 +46,8 @@ public class Player : MonoBehaviour
 
     private void UpdateCamView()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = playerController.GetAxis("LookX") * mouseSensitivity * Time.deltaTime;
+        float mouseY = playerController.GetAxis("LookY") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
@@ -81,13 +81,13 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, detectionLength))
         {
 
-            if (hit.transform.GetComponent<Interactibles>())
+            if (hit.transform.GetComponent<LevierScript>())
             {
                 if (playerController.GetButtonDown("Interact"))
                 {
-                    Interactibles interactible = hit.transform.GetComponent<Interactibles>();
+                    LevierScript interactible = hit.transform.GetComponent<LevierScript>();
 
-                    interactible.OnActivate();
+                    interactible.Activation = true;
                 }
  
             }
