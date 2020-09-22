@@ -11,11 +11,20 @@ public class Player : MonoBehaviour
     [Range(1f, 8f)] private float detectionLength = 4f;
     [SerializeField] private float moveSpeed = 10f;
 
+    [SerializeField, Range(-1f, -20f)] private float gravity = -9f;
+
     private float xRotation = 0f;
 
     private CharacterController controller;
 
     private Rewired.Player playerController ;
+
+    private Vector3 velocity;
+
+    private bool isGrounded = true;
+
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundMask;
     
     // Start is called before the first frame update
     void Start()
@@ -49,12 +58,20 @@ public class Player : MonoBehaviour
 
     private void UpdatePos()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundMask);
+
+        if (isGrounded && velocity.y < 0) velocity.y = -2f;
+
         float xPos = playerController.GetAxis("AxisX");
         float zPos = playerController.GetAxis("AxisZ");
 
         Vector3 movePos = transform.right * xPos + transform.forward * zPos;
 
         controller.Move(movePos * moveSpeed *Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void checkForInteractible()
