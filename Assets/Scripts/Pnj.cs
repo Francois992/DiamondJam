@@ -19,13 +19,15 @@ public class Pnj : MonoBehaviour
     public bool right = true;
 
     public List<Vector3> destination;
+    public List<float> stay;
     public NavMeshAgent agent;
     public int dest = 0;
-    public float distReaction = 1f;
+    public float distReaction = 5f;
     public float distSeparation;
 
     public float timeWait = 3f;
     public float timerW = 0f;
+    public int indexWait = 0;
 
     public bool dead = false;
 
@@ -33,7 +35,6 @@ public class Pnj : MonoBehaviour
     void Start()
     {
         position = transform.position;
-
     }
 
     // Update is called once per frame
@@ -41,7 +42,6 @@ public class Pnj : MonoBehaviour
     {
         distSeparation = Vector3.Distance(transform.position, destination[dest]);
         Move();
-        //Death();
     }
 
     private void OnTriggerStay(Collider other)
@@ -56,40 +56,23 @@ public class Pnj : MonoBehaviour
 
     public void Move()
     {
-
-        agent.SetDestination(destination[dest]);
+        
         if(distSeparation <= distReaction)
         {
-            
-            //Wait();
-            dest++;
-            dest = dest % (destination.Count);
+            timerW += Time.deltaTime;
+            if (timerW >= stay[indexWait])
+            {
+                indexWait = (indexWait + 1) % (stay.Count);
+                dest = (dest + 1) % (destination.Count);
+                timerW = 0;
+            }
+        }
+        else
+        {
+            agent.SetDestination(destination[dest]);
         }
 
-        /*
-        if (move)
-        {
-            if (right)
-            {
-                transform.Translate(Vector3.right * Time.deltaTime);
-                if (timerM >= timeMove)
-                {
-                   right = false;
-                   timerM = 0;
-                }
-            }
-            else
-            {
-                transform.Translate(Vector3.left * Time.deltaTime);
-                if (timerM >= timeMove)
-                {
-                    right = true;
-                    timerM = 0;
-                }
-            }
-            timerM += Time.deltaTime;
-            
-        }*/
+        
     }
 
     public void Death()
@@ -103,13 +86,8 @@ public class Pnj : MonoBehaviour
         }
     }
     
-    public void Wait()
-    {
-        timerW += Time.deltaTime;
-        if(timerW >= timeWait)
-        {
-            timerW = 0;
-        }
-    }
+    
+
+    
 
 }
