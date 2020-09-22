@@ -103,13 +103,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Oxygene"))
-        {
-            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
-            else enVie = false;
-        }
-    }
 }

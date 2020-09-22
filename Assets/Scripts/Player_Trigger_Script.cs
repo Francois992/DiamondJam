@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Trigger_Script : MonoBehaviour
 {
@@ -26,12 +27,12 @@ public class Player_Trigger_Script : MonoBehaviour
     {
         if (other.CompareTag("Porte")) porte_Script.Ouverte = true;
 
-
+        if (other.CompareTag("Antidode")) SceneManager.LoadScene("Scene_Victoire");
 
         if (other.CompareTag("Oxygene"))
         {
             if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
-            else UnityEngine.Debug.Log("Mort");
+            else gameObject.GetComponent<Player>().enVie = false;
         }
     }
 
@@ -40,7 +41,7 @@ public class Player_Trigger_Script : MonoBehaviour
         if (other.CompareTag("Oxygene"))
         {
             if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
-            else UnityEngine.Debug.Log("Mort");
+            else gameObject.GetComponent<Player>().enVie = false;
         }
     }
 
