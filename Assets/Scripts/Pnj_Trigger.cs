@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Pnj_Trigger : MonoBehaviour
 {
-    public Pnj pnj;
-    public SphereCollider sphere;
-    public Vector3 scale;
+    public Pnj pnj;                 //Choix du pnj 
+    public SphereCollider sphere;   //Collider désigné
+    public Vector3 scale;           //Taille de la zone dangereuse
     
 
     // Start is called before the first frame update
@@ -20,9 +20,14 @@ public class Pnj_Trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(pnj.transform.position.x, 0, pnj.transform.position.z);
+        Follow();
     }
 
+
+    public void Follow()
+    {
+        transform.position = new Vector3(pnj.transform.position.x, 0, pnj.transform.position.z);
+    }
     
 
 }
