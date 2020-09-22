@@ -6,7 +6,7 @@ using DG.Tweening;
 public class LevierScript : MonoBehaviour
 {
     public bool Activation;
-    [SerializeField] private Transform Sas;
+    [SerializeField] private Transform ObjetInteragir;
     Sas_Script sas_Script;
 
     // Start is called before the first frame update
@@ -18,15 +18,20 @@ public class LevierScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        InteractionSas();
+    }
+
+    public void InteractionSas()
+    {
         if (Activation)
         {
-            Sas.DOMoveY(70f, 0.5f);
+            ObjetInteragir.DOMoveY(70f, 0.5f);
             sas_Script.Ouvert = true;
         }
 
-        else 
-        { 
-            Sas.DOMoveY(20f, 0.5f);
+        else
+        {
+            ObjetInteragir.DOMoveY(20f, 0.5f);
             sas_Script.Ouvert = false;
         }
     }
