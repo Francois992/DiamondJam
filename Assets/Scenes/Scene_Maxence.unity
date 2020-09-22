@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 181012955}
   - component: {fileID: 181012954}
   - component: {fileID: 181012958}
+  - component: {fileID: 181012959}
   m_Layer: 0
   m_Name: Levier
   m_TagString: Untagged
@@ -391,7 +392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 85db6e21e674b8f4a94f6926220209c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -449,6 +450,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Activation: 0
   ObjetInteragir: {fileID: 1612511743}
+  sas_Script: {fileID: 0}
+--- !u!114 &181012959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181012953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c651032bd9d942abc2de6f9d4fe32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 250
 --- !u!1 &208593102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1724786197442117797, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
@@ -1977,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c02e85fcbc389c4eb683429af42ec48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ouverte: 0
+  Ouvert: 0
 --- !u!1 &2008028202
 GameObject:
   m_ObjectHideFlags: 0
