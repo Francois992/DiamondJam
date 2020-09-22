@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
                 {
                     LevierScript interactible = hit.transform.GetComponent<LevierScript>();
 
-                    //interactible.Activation = true;
+                    interactible.InteractionSas();
                 }
  
             }

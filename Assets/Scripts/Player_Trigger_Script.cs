@@ -24,7 +24,7 @@ public class Player_Trigger_Script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Porte")) porte_Script.Ouverte = true;
+        if (other.CompareTag("Porte")) porte_Script.Ouvert = true;
 
 
 
@@ -46,7 +46,7 @@ public class Player_Trigger_Script : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Porte")) porte_Script.Ouverte = false;
+        if (other.CompareTag("Porte")) porte_Script.Ouvert = false;
     }
 
 }
