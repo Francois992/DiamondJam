@@ -18,7 +18,7 @@ public class Pnj : MonoBehaviour
     public bool move = true;
     public bool right = true;
 
-    public List<Vector3> destination;
+    public List<GameObject> destination;
     public List<float> stay;
     public NavMeshAgent agent;
     public int dest = 0;
@@ -40,7 +40,7 @@ public class Pnj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distSeparation = Vector3.Distance(transform.position, destination[dest]);
+        distSeparation = Vector3.Distance(transform.position, destination[dest].transform.position);
         Move();
     }
 
@@ -69,7 +69,7 @@ public class Pnj : MonoBehaviour
         }
         else
         {
-            agent.SetDestination(destination[dest]);
+            agent.SetDestination(destination[dest].transform.position);
         }
 
         

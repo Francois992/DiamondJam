@@ -34,6 +34,11 @@ public class Player_Trigger_Script : MonoBehaviour
             if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
             else gameObject.GetComponent<Player>().enVie = false;
         }
+
+        if (other.CompareTag("Pnj"))
+        {
+            gameObject.GetComponent<Player>().enVie = false;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -49,5 +54,5 @@ public class Player_Trigger_Script : MonoBehaviour
     {
         if (other.CompareTag("Porte")) porte_Script.Ouverte = false;
     }
-
+    
 }
