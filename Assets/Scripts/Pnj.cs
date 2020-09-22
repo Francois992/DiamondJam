@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Pnj : MonoBehaviour
 {
@@ -17,6 +18,15 @@ public class Pnj : MonoBehaviour
     public bool move = true;
     public bool right = true;
 
+    public List<Vector3> destination;
+    public NavMeshAgent agent;
+    public int dest = 0;
+    public float distReaction = 1f;
+    public float distSeparation;
+
+    public float timeWait = 3f;
+    public float timerW = 0f;
+
     public bool dead = false;
 
     // Start is called before the first frame update
@@ -29,7 +39,8 @@ public class Pnj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Move();
+        distSeparation = Vector3.Distance(transform.position, destination[dest]);
+        Move();
         //Death();
     }
 
@@ -45,6 +56,17 @@ public class Pnj : MonoBehaviour
 
     public void Move()
     {
+
+        agent.SetDestination(destination[dest]);
+        if(distSeparation <= distReaction)
+        {
+            
+            //Wait();
+            dest++;
+            dest = dest % (destination.Count);
+        }
+
+        /*
         if (move)
         {
             if (right)
@@ -67,7 +89,7 @@ public class Pnj : MonoBehaviour
             }
             timerM += Time.deltaTime;
             
-        }
+        }*/
     }
 
     public void Death()
@@ -81,6 +103,13 @@ public class Pnj : MonoBehaviour
         }
     }
     
-    
+    public void Wait()
+    {
+        timerW += Time.deltaTime;
+        if(timerW >= timeWait)
+        {
+            timerW = 0;
+        }
+    }
 
 }
