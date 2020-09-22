@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 3528133453845627507}
   mouseSensitivity: 350
-  moveSpeed: 10
+  moveSpeed: 5
   gravity: -9
   groundCheck: {fileID: 8772006114136998732}
   groundMask:
