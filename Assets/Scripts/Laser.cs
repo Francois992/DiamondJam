@@ -30,7 +30,9 @@ public class Laser : MonoBehaviour
                     if(hit.collider.tag == "Pnj")
                     {
                         Debug.Log("Touché PNJ");
-                        hit.collider.gameObject.transform.GetComponent<Pnj>().Death();
+                        hit.collider.gameObject.transform.GetComponent<Pnj>().timeDead = 0.5f;
+                        hit.collider.gameObject.transform.GetComponent<Pnj>().laser =  true;
+                        
                     }
 
                     if(hit.collider.tag == "Player")
@@ -47,18 +49,6 @@ public class Laser : MonoBehaviour
             lr.enabled = false;
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Pnj"))
-        {
-            other.transform.parent.GetComponent<Pnj>().Death();
-        }
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            transform.parent.GetComponent<Player>().enVie = false;
-        }
-    }
+    
 }
 
