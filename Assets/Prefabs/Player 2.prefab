@@ -116,7 +116,7 @@ MonoBehaviour:
   playerCamera: {fileID: 3007953557017998323}
   mouseSensitivity: 150
   detectionLength: 3.5
-  moveSpeed: 10
+  moveSpeed: 3.5
   gravity: -9
   playerId: 1
   enVie: 0
