@@ -128,6 +128,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Fonction pour enlever les items de l'inventaire | il faudra simplement changer le x.name en fonction de l'item voulu
+    private void removeItemInventaire()
+    {
+        GameObject itemCheck = inventairePlayer.Find(x => x.name == "Cube");
+        if (inventairePlayer.Contains(itemCheck))
+        {
+            inventairePlayer.Remove(itemCheck);
+            itemCheck.SetActive(true);
+        }
+        else Debug.Log("Objet non présent");
+    }
+
     public void changeGravity(float value)
     {
         initialGravValue = gravity;
