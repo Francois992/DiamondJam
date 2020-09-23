@@ -35,7 +35,7 @@ public class Player_Trigger_Script : MonoBehaviour
             else transform.parent.GetComponent<Player>().enVie = false;
         }
 
-        if (other.CompareTag("Pnj") || (other.CompareTag("Player") && transform.parent.GetComponent<Player>().playerId != other.transform.parent.GetComponent<Player>().playerId))
+        if (other.CompareTag("Pnj") || (other.transform.parent != null && other.transform.parent.CompareTag("Player")))
         {
             transform.parent.GetComponent<Player>().enVie = false;
 

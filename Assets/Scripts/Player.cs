@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Camera playerCamera = null;
 
     [Range(100f, 500f)] public float mouseSensitivity = 100f;
-    [Range(1f, 8f)] private float detectionLength = 4f;
+    [SerializeField, Range(1f, 8f)] private float detectionLength = 4f;
     [SerializeField] private float moveSpeed = 10f;
 
     [SerializeField, Range(-1f, -20f)] private float gravity = -9f;
