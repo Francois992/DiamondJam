@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 
     public string NomToucheInteraction;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         NomToucheInteraction = playerController.controllers.maps.GetFirstButtonMapWithAction("Interact", true).elementIdentifierName;
 
         enVie = true;
+        
     }
 
     // Update is called once per frame
@@ -170,13 +172,18 @@ public class Player : MonoBehaviour
 
     public void changeGravity(float value)
     {
-        initialGravValue = gravity;
-        gravity = value;
+        GameObject itemCheck = inventairePlayer.Find(x => x.name == "Antigrav");
+        Debug.Log("presence antigrav " + itemCheck);
+        if (itemCheck == null)
+        { 
+            initialGravValue = gravity;
+            gravity = value;
+        }
     }
 
     public void revertGravity()
     {
+        GameObject itemCheck = inventairePlayer.Find(x => x.name == "Antigrav");
         gravity = initialGravValue;
-
     }
 }
