@@ -21,14 +21,26 @@ public class Laser : MonoBehaviour
             lr.enabled = true;
             lr.SetPosition(0, transform.position);
             RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            {
+                if (hit.collider)
                 {
-                    if (hit.collider)
+                    lr.SetPosition(1, hit.point);
+
+                    if(hit.collider.tag == "Pnj")
                     {
-                       lr.SetPosition(1, hit.point);
+                        Debug.Log("Touché PNJ");
+                        hit.collider.gameObject.transform.GetComponent<Pnj>().Death();
+                    }
+
+                    if(hit.collider.tag == "Player")
+                    {
+                        Debug.Log("Touché Player");
+                        hit.collider.gameObject.transform.GetComponent<Player>().enVie = false;
                     }
                 }
-              else lr.SetPosition(1, transform.position + (transform.forward * 5000));
+            }
+            else lr.SetPosition(1, transform.position + (transform.forward * 5000));
         }
         else
         {
