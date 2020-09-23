@@ -35,9 +35,21 @@ public class Player_Trigger_Script : MonoBehaviour
             else transform.parent.GetComponent<Player>().enVie = false;
         }
 
-        if (other.CompareTag("Pnj") || (other.CompareTag("Player") && transform.parent.GetComponent<Player>().playerId != other.transform.parent.GetComponent<Player>().playerId))
+        if (other.CompareTag("Pnj") || (other.transform.parent != null && other.transform.parent.CompareTag("Player")))
         {
             transform.parent.GetComponent<Player>().enVie = false;
+
+            Debug.Log("mort");
+        }
+
+        if (other.CompareTag("KillZone"))
+        {
+            transform.parent.GetComponent<Player>().enVie = false;
+        }
+
+        if (other.CompareTag("UpGrav"))
+        {
+            transform.parent.GetComponent<Player>().changeGravity(9);
         }
     }
 
@@ -53,11 +65,24 @@ public class Player_Trigger_Script : MonoBehaviour
             if (other.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
             else transform.parent.GetComponent<Player>().enVie = false;
         }
+
+        if (other.CompareTag("UpGrav"))
+        {
+            transform.parent.GetComponent<Player>().inUpGrav = true;
+            
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Porte")) other.transform.parent.GetComponent<Porte_Script>().Ouvert = false;
+
+        if (other.CompareTag("UpGrav"))
+        {
+
+            transform.parent.GetComponent<Player>().inUpGrav = false;
+            transform.parent.GetComponent<Player>().revertGravity();
+        }
     }
     
 }
