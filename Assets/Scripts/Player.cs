@@ -103,6 +103,19 @@ public class Player : MonoBehaviour
         {
             if (hit.transform.GetComponent<LevierScript>())
             {
+                if (playerController.GetButton("Interact") && hit.transform.GetComponent<MaintainLever>())
+                {
+                    MaintainLever interactible = hit.transform.GetComponent<MaintainLever>();
+
+                    interactible.InteractionSas();
+                }
+                else if(!playerController.GetButton("Interact") && hit.transform.GetComponent<MaintainLever>())
+                {
+                    MaintainLever interactible = hit.transform.GetComponent<MaintainLever>();
+
+                    interactible.StopInteractionSas();
+                }
+
                 if (playerController.GetButtonDown("Interact"))
                 {
                     LevierScript interactible = hit.transform.GetComponent<LevierScript>();

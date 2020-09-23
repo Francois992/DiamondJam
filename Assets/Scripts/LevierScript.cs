@@ -7,7 +7,7 @@ public class LevierScript : MonoBehaviour
 {
     public bool Activation = false;
     
-    [SerializeField] private Sas_Script sas_Script;
+    [SerializeField] protected Sas_Script sas_Script;
 
     
 
@@ -23,7 +23,7 @@ public class LevierScript : MonoBehaviour
         
     }
 
-    public void InteractionSas()
+    virtual public void InteractionSas()
     {
         if (!sas_Script.Ouvert)
         {
