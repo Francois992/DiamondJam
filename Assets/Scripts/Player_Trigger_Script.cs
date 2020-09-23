@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class Player_Trigger_Script : MonoBehaviour
 {
@@ -30,30 +31,33 @@ public class Player_Trigger_Script : MonoBehaviour
 
         if (other.CompareTag("Oxygene"))
         {
-            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
-            else gameObject.GetComponent<Player>().enVie = false;
+            if (other.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
+            else transform.parent.GetComponent<Player>().enVie = false;
         }
 
-        if (other.CompareTag("Pnj") || (other.CompareTag("Player") && gameObject.GetComponent<Player>().playerId != other.GetComponent<Player>().playerId))
+        if (other.CompareTag("Pnj") || (other.CompareTag("Player") && transform.parent.GetComponent<Player>().playerId != other.transform.parent.GetComponent<Player>().playerId))
         {
-            gameObject.GetComponent<Player>().enVie = false;
+            transform.parent.GetComponent<Player>().enVie = false;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Porte")) porte_Script.Ouvert = true;
+        if (other.CompareTag("Porte"))
+        {
+            other.transform.parent.GetComponent<Porte_Script>().Ouvert = true;
+        }
 
         if (other.CompareTag("Oxygene"))
         {
-            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) UnityEngine.Debug.Log("Vivant");
-            else gameObject.GetComponent<Player>().enVie = false;
+            if (other.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
+            else transform.parent.GetComponent<Player>().enVie = false;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Porte")) porte_Script.Ouvert = false;
+        if (other.CompareTag("Porte")) other.transform.parent.GetComponent<Porte_Script>().Ouvert = false;
     }
     
 }

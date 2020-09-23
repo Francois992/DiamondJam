@@ -15,8 +15,6 @@ public class LevierScript : MonoBehaviour
     void Start()
     {
         //sas_Script = ObjetInteragir.GetComponent<Sas_Script>();
-
-        Debug.Log(sas_Script);
     }
 
     // Update is called once per frame
