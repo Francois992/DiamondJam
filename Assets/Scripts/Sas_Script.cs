@@ -14,7 +14,6 @@ public class Sas_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(OxygeneZone);
 
         initialPosY = transform.localPosition.y;
         finalPosY = transform.localPosition.y + transform.localScale.y;
