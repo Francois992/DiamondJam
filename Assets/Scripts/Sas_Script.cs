@@ -6,7 +6,7 @@ using UnityEngine;
 public class Sas_Script : MonoBehaviour
 {
     public bool Ouvert;
-    [SerializeField] private float initialPosY = 0;
+    [SerializeField] public float initialPosY = 0;
     [SerializeField] private float finalPosY = 2.5f;
 
     [SerializeField] private Oxygene_Script OxygeneZone = null;
