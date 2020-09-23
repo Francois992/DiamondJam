@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sas_script.Ouvert == true) oxygeneSalles[1].GetComponent<Oxygene_Script>().Oxygene = false;
-        else oxygeneSalles[1].GetComponent<Oxygene_Script>().Oxygene = true;
+        if (sas_script.Ouvert == true) oxygeneSalles[0].GetComponent<Oxygene_Script>().Oxygene = false;
+        else oxygeneSalles[0].GetComponent<Oxygene_Script>().Oxygene = true;
 
         foreach (GameObject player in Players)
         {

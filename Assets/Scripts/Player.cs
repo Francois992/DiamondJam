@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using System.Runtime.ExceptionServices;
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+
+    public List<GameObject> inventairePlayer = new List<GameObject>();
 
     GameManager gameManager;
     
@@ -96,7 +99,6 @@ public class Player : MonoBehaviour
 
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, detectionLength))
         {
-
             if (hit.transform.GetComponent<LevierScript>())
             {
                 if (playerController.GetButtonDown("Interact"))
@@ -107,7 +109,35 @@ public class Player : MonoBehaviour
                 }
  
             }
+
+            if (hit.transform.CompareTag("ObjetInventaire"))
+            {
+                if (playerController.GetButtonDown("Interact"))
+                {
+                    GameObject item = inventairePlayer.Find(x => x.name == hit.collider.gameObject.name);
+
+                    if (item == null)
+                    {
+                        Debug.Log("Interaction");
+                        inventairePlayer.Add(hit.collider.gameObject);
+                        hit.collider.gameObject.SetActive(false);
+                    }
+                    else Debug.Log("Objet déjà dans l'inventaire du Player");
+                }
+            }
         }
+    }
+
+    //Fonction pour enlever les items de l'inventaire | il faudra simplement changer le x.name en fonction de l'item voulu
+    private void removeItemInventaire()
+    {
+        GameObject itemCheck = inventairePlayer.Find(x => x.name == "Cube");
+        if (inventairePlayer.Contains(itemCheck))
+        {
+            inventairePlayer.Remove(itemCheck);
+            itemCheck.SetActive(true);
+        }
+        else Debug.Log("Objet non présent");
     }
 
     public void changeGravity(float value)
