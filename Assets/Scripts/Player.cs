@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
         UpdatePos();
 
         checkForInteractible();
+
+        if (Input.GetKeyDown(KeyCode.Space)) removeItemInventaire();
     }
 
     private void UpdateCamView()
@@ -112,6 +114,7 @@ public class Player : MonoBehaviour
 
             if (hit.transform.CompareTag("ObjetInventaire"))
             {
+                Debug.Log("");
                 if (playerController.GetButtonDown("Interact"))
                 {
                     GameObject item = inventairePlayer.Find(x => x.name == hit.collider.gameObject.name);
@@ -132,7 +135,7 @@ public class Player : MonoBehaviour
     private void removeItemInventaire()
     {
         GameObject itemCheck = inventairePlayer.Find(x => x.name == "Cube");
-        if (inventairePlayer.Contains(itemCheck))
+        if (itemCheck != null)
         {
             inventairePlayer.Remove(itemCheck);
             itemCheck.SetActive(true);
