@@ -791,6 +791,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: UpGrav
       objectReference: {fileID: 0}
+    - target: {fileID: 7831640324308195837, guid: 6a5dbf708f4bcd94387499a7f0111481, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 063a64613e2b4f541893cad4d9794ff0, type: 2}
     - target: {fileID: 8679278683702426653, guid: 6a5dbf708f4bcd94387499a7f0111481, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.90851593
