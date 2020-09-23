@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     [SerializeField, Range(1f, 8f)] private float detectionLength = 4f;
     [SerializeField] private float moveSpeed = 10f;
 
-    [SerializeField, Range(-1f, -20f)] private float gravity = -9f;
+    [SerializeField, Range(20f, -20f)] private float gravity = -9f;
+
+    private float initialGravValue;
 
     private float xRotation = 0f;
 
@@ -26,6 +28,8 @@ public class Player : MonoBehaviour
     private Vector3 velocity;
 
     private bool isGrounded = true;
+
+    public bool inUpGrav = false;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
@@ -68,7 +72,9 @@ public class Player : MonoBehaviour
 
     private void UpdatePos()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundMask);
+        if(!inUpGrav) isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundMask);
+        else isGrounded = false;
+        
 
         if (isGrounded && velocity.y < 0) velocity.y = -2f;
 
@@ -102,5 +108,17 @@ public class Player : MonoBehaviour
  
             }
         }
+    }
+
+    public void changeGravity(float value)
+    {
+        initialGravValue = gravity;
+        gravity = value;
+    }
+
+    public void revertGravity()
+    {
+        gravity = initialGravValue;
+
     }
 }
