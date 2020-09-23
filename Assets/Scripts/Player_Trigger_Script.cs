@@ -38,6 +38,8 @@ public class Player_Trigger_Script : MonoBehaviour
         if (other.CompareTag("Pnj") || (other.CompareTag("Player") && transform.parent.GetComponent<Player>().playerId != other.transform.parent.GetComponent<Player>().playerId))
         {
             transform.parent.GetComponent<Player>().enVie = false;
+
+            Debug.Log("mort");
         }
     }
 
