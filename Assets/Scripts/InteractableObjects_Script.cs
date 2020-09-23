@@ -6,7 +6,6 @@ public class InteractableObjects_Script : MonoBehaviour
 {
     GameManager gameManager;
 
-
     public float maxDistance = 250f;
 
     public bool ObjetInteractible;
@@ -33,8 +32,15 @@ public class InteractableObjects_Script : MonoBehaviour
             }
         }
 
-        if(ObjetInteractible == false) GetComponent<Renderer>().material.SetColor("_OutlineColor", Color.clear);
-        else GetComponent<Renderer>().material.SetColor("_OutlineColor", Color.red);
+        if (ObjetInteractible == false)
+        {
+            GetComponent<Renderer>().material.SetColor("_OutlineColor", Color.clear);
+            GetComponent<Renderer>().material.SetFloat("_Outline", 0);
+        }
+        else 
+        { 
+            GetComponent<Renderer>().material.SetColor("_OutlineColor", Color.red);
+        }
 
     }
 }
