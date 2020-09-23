@@ -517,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &524791982
 Transform:
   m_ObjectHideFlags: 0
@@ -2092,15 +2092,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5882330418166534217, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.38
       objectReference: {fileID: 0}
     - target: {fileID: 5882330418166534217, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: 5882330418166534217, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.02
       objectReference: {fileID: 0}
     - target: {fileID: 5882330418166534217, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2137,6 +2137,10 @@ PrefabInstance:
     - target: {fileID: 5882330418166534223, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}
       propertyPath: m_Name
       value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882330418166534223, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b711367a70aec4f42bf64cf02f9a12bb, type: 3}

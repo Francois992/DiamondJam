@@ -5,11 +5,11 @@ using UnityEngine.AI;
 
 public class Pnj : MonoBehaviour
 {
-    
+
     public Vector3 position;
     public float timeDead = 2f;
-    private float timerD = 0f;
-    
+    public float timerD = 0f;
+
     public float timeMove = 1.5f;
     private float timerM = 0f;
     public bool move = true;
@@ -21,13 +21,14 @@ public class Pnj : MonoBehaviour
     private int dest = 0;
     public float distReaction = 2f;
     private float distSeparation;
-    
+
     private float timerW = 0f;
     private int indexWait = 0;
 
     public bool attracted = false;
 
     public bool dead = false;
+    public bool laser = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,11 @@ public class Pnj : MonoBehaviour
         {
             Move();
         }
+
+        if (laser)
+        {
+            Death();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -57,8 +63,7 @@ public class Pnj : MonoBehaviour
 
     public void Move()
     {
-        
-        if(distSeparation <= distReaction)
+        if (distSeparation <= distReaction)
         {
             timerW += Time.deltaTime;
             if (timerW >= stay[indexWait])
@@ -72,19 +77,25 @@ public class Pnj : MonoBehaviour
         {
             agent.SetDestination(destination[dest].transform.position);
         }
+    }
 
         
-    }
+    
 
     public void Death()
     {
         move = false;
         dead = true;
         timerD += Time.deltaTime;
-        if(timerD >= timeDead)
+
+        agent.speed = 0;
+
+        if (timerD >= timeDead)
         {
             gameObject.SetActive(false);
+            timerD = 0;
         }
+        Debug.Log("Pnj est MORT");
     }
     
     
