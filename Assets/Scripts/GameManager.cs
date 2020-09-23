@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] Players;
 
+    public GameObject PopUpToucheInteraction;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -44,7 +44,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.93082404, y: 2.093647, z: 1.0463165}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3798467644249372652
 MonoBehaviour:
@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de5374ff3fec8d4eaa46dcd026daeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PopUpInteraction: {fileID: 0}
 --- !u!54 &1771955646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -194,10 +195,13 @@ MonoBehaviour:
   gravity: -9
   playerId: 0
   enVie: 0
+  inUpGrav: 0
   groundCheck: {fileID: 8772006114136998732}
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  inventairePlayer: []
+  NomToucheInteraction: 
 --- !u!143 &4824435884295280331
 CharacterController:
   m_ObjectHideFlags: 0

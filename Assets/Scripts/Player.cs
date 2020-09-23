@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     public List<GameObject> inventairePlayer = new List<GameObject>();
 
     GameManager gameManager;
+
+    public string NomToucheInteraction;
     
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,8 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         gameManager = FindObjectOfType<GameManager>();
+
+        NomToucheInteraction = playerController.controllers.maps.GetFirstButtonMapWithAction("Interact", true).elementIdentifierName;
 
         enVie = true;
     }
@@ -59,8 +63,6 @@ public class Player : MonoBehaviour
         UpdatePos();
 
         checkForInteractible();
-
-        if (Input.GetKeyDown(KeyCode.Space)) removeItemInventaire();
     }
 
     private void UpdateCamView()
@@ -127,7 +129,7 @@ public class Player : MonoBehaviour
 
             if (hit.transform.CompareTag("ObjetInventaire"))
             {
-                Debug.Log("");
+                Debug.Log(NomToucheInteraction);
                 if (playerController.GetButtonDown("Interact"))
                 {
                     GameObject item = inventairePlayer.Find(x => x.name == hit.collider.gameObject.name);
@@ -136,6 +138,7 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log("Interaction");
                         inventairePlayer.Add(hit.collider.gameObject);
+                        Destroy(transform.GetChild(2).GetComponent<Player_Trigger_Script>().PopUpInteraction);
                         hit.collider.gameObject.SetActive(false);
                     }
                     else Debug.Log("Objet déjà dans l'inventaire du Player");
