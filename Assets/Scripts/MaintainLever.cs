@@ -6,6 +6,7 @@ public class MaintainLever : LevierScript
 {
     private bool Activated = false;
 
+    public Player user = null;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +20,12 @@ public class MaintainLever : LevierScript
         {
             sas_Script.Ouvert = false;
 
+        }
+
+        if(user != null && Vector3.Distance(transform.position, user.transform.position) > 2)
+        {
+            StopInteractionSas();
+            user = null;
         }
     }
 

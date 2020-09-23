@@ -109,13 +109,22 @@ public class Player : MonoBehaviour
                 {
                     MaintainLever interactible = hit.transform.GetComponent<MaintainLever>();
 
-                    interactible.InteractionSas();
+                    if(interactible.user == null)
+                    {
+                        interactible.user = this;
+                        interactible.InteractionSas();
+                    }
+                    
                 }
                 else if(!playerController.GetButton("Interact") && hit.transform.GetComponent<MaintainLever>())
                 {
                     MaintainLever interactible = hit.transform.GetComponent<MaintainLever>();
 
-                    interactible.StopInteractionSas();
+                    if (interactible.user == this)
+                    {
+                        interactible.user = null;
+                        interactible.StopInteractionSas();
+                    }
                 }
 
                 if (playerController.GetButtonDown("Interact"))
