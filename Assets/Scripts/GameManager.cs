@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
         if (sas_script != null)
         {
 
-            //if (sas_script.Ouvert == true) oxygeneSalles[0].GetComponent<Oxygene_Script>().Oxygene = false;
-            //else oxygeneSalles[0].GetComponent<Oxygene_Script>().Oxygene = true;
+            if (sas_script.Ouvert == true) oxygeneSalles[0].GetComponent<Oxygene_Script>().Oxygene = 0;
+            
         }
 
         foreach (GameObject player in Players)

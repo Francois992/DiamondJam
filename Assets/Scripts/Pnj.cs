@@ -55,8 +55,7 @@ public class Pnj : MonoBehaviour
     {
         if (other.CompareTag("Oxygene"))
         {
-            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
-            else Death();
+            if (other.gameObject.GetComponent<Oxygene_Script>().Oxygene < 100) Death();
         }
     }
 

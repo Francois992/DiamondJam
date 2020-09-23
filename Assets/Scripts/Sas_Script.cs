@@ -23,13 +23,12 @@ public class Sas_Script : MonoBehaviour
         if (Ouvert)
         {
             transform.DOLocalMoveY(finalPosY, 0.5f);
-            if( OxygeneZone != null)OxygeneZone.Oxygene = false;
+            if( OxygeneZone != null)OxygeneZone.Oxygene = 0;
         }
 
         else
         {
             transform.DOLocalMoveY(initialPosY, 0.5f);
-            if (OxygeneZone != null)OxygeneZone.Oxygene = true;
         }
         
     }

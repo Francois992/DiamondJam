@@ -36,8 +36,8 @@ public class Player_Trigger_Script : MonoBehaviour
 
         if (other.CompareTag("Oxygene"))
         {
-            if (other.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
-            else transform.parent.GetComponent<Player>().enVie = false;
+            if (other.GetComponent<Oxygene_Script>().Oxygene < 100) transform.parent.GetComponent<Player>().enVie = false; 
+            
         }
 
         if (other.CompareTag("Pnj") || (other.transform.parent != null && other.transform.parent.CompareTag("Player")))
@@ -76,8 +76,8 @@ public class Player_Trigger_Script : MonoBehaviour
 
         if (other.CompareTag("Oxygene"))
         {
-            if (other.GetComponent<Oxygene_Script>().Oxygene == true) Debug.Log("Vivant");
-            else transform.parent.GetComponent<Player>().enVie = false;
+            if (other.GetComponent<Oxygene_Script>().Oxygene < 100) transform.parent.GetComponent<Player>().enVie = false;
+            
         }
 
         if (other.CompareTag("UpGrav"))
