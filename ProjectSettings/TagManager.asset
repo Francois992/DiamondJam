@@ -8,6 +8,8 @@ TagManager:
   - Porte
   - Pnj
   - Antidode
+  - KillZone
+  - UpGrav
   layers:
   - Default
   - TransparentFX
