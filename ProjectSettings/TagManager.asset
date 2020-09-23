@@ -11,6 +11,8 @@ TagManager:
   - ObjetInventaire
   - KillZone
   - UpGrav
+  - Laser
+  - Canvas
   layers:
   - Default
   - TransparentFX
