@@ -106,6 +106,10 @@ PrefabInstance:
       propertyPath: Ouvert
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 317231604199410531, guid: b5946459690ddac4b8c8f41e6ab945b7, type: 3}
+      propertyPath: finalPosY
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4014825970519436554, guid: b5946459690ddac4b8c8f41e6ab945b7, type: 3}
       propertyPath: m_Size.z
       value: 3.0076466

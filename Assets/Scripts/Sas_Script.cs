@@ -6,8 +6,8 @@ using UnityEngine;
 public class Sas_Script : MonoBehaviour
 {
     public bool Ouvert;
-    private float initialPosY;
-    private float finalPosY;
+    [SerializeField] private float initialPosY = 0;
+    [SerializeField] private float finalPosY = 2.5f;
 
     [SerializeField] private Oxygene_Script OxygeneZone = null;
 
@@ -15,8 +15,6 @@ public class Sas_Script : MonoBehaviour
     void Start()
     {
 
-        initialPosY = transform.localPosition.y;
-        finalPosY = transform.localPosition.y + transform.localScale.y;
     }
 
     // Update is called once per frame
