@@ -29,7 +29,7 @@ public class Menu_Script : MonoBehaviour
 
     public void JouerAuJeu()
     {
-        SceneManager.LoadScene("Scene_Main");
+        SceneManager.LoadScene("Level1");
     }
 
     public void RetourMenuPrincipal()
