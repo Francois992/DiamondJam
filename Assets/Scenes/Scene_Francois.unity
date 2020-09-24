@@ -830,6 +830,10 @@ PrefabInstance:
       propertyPath: enVie
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3007953557017998323, guid: e2159bfad3fabde499d075f97276ac27, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2159bfad3fabde499d075f97276ac27, type: 3}
 --- !u!1001 &2630181571629459804
