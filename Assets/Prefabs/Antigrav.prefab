@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4135352282936152082}
   - component: {fileID: 4135352282936152301}
   - component: {fileID: 4135352282936152300}
+  - component: {fileID: 4288095545931716890}
   m_Layer: 0
   m_Name: Antigrav
-  m_TagString: Untagged
+  m_TagString: ObjetInventaire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 85db6e21e674b8f4a94f6926220209c8, type: 2}
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -96,6 +98,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4288095545931716890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4135352282936152303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c651032bd9d942abc2de6f9d4fe32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 20
+  ObjetInteractible: 1
 --- !u!1 &4135352283189971544
 GameObject:
   m_ObjectHideFlags: 0
