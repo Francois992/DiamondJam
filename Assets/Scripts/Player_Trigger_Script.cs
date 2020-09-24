@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
+using DG.Tweening;
 
 public class Player_Trigger_Script : MonoBehaviour
 {
@@ -13,7 +14,13 @@ public class Player_Trigger_Script : MonoBehaviour
     Porte_Script porte_Script;
     GameManager gameManager;
 
+    Canvas canvasPlayer;
+
     public GameObject PopUpInteraction;
+
+    public float maxDistance = 100f;
+
+    Player joueur;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +28,53 @@ public class Player_Trigger_Script : MonoBehaviour
         oxygene_Script = FindObjectOfType<Oxygene_Script>();
         porte_Script = FindObjectOfType<Porte_Script>();
         gameManager = FindObjectOfType<GameManager>();
+
+        joueur = transform.parent.GetComponent<Player>();
+
+        canvasPlayer = GameObject.FindGameObjectWithTag(joueur.playerId == 0 ? "CanvasJ1" : "CanvasJ2").GetComponent<Canvas>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        DistancePnj();
+
+        DistancePlayer();
+    }
+
+    public void DistancePnj()
+    {
+        float distPnj = Vector3.Distance(joueur.transform.localPosition, GameObject.FindGameObjectWithTag("Pnj").transform.localPosition);
+        float scalePnj = 0f;
+
+        if (distPnj < maxDistance)
+        {
+
+            scalePnj = 1f - (distPnj / maxDistance);
+
+            canvasPlayer.GetComponentInChildren<Image>().DOFade(scalePnj, 0.1f);
+        }
+    }
+
+    public void DistancePlayer()
+    {
+        foreach (GameObject player in gameManager.Players)
+        {
+            if (player.GetComponent<Player>().playerId != joueur.playerId)
+            {
+                float distPnj = Vector3.Distance(joueur.transform.localPosition, player.transform.localPosition);
+                float scalePnj = 0f;
+
+                if (distPnj < maxDistance)
+                {
+
+                    scalePnj = 1f - (distPnj / maxDistance);
+
+                    canvasPlayer.GetComponentInChildren<Image>().DOFade(scalePnj, 0.1f);
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,8 +106,6 @@ public class Player_Trigger_Script : MonoBehaviour
         if (other.transform.GetComponent<InteractableObjects_Script>())
         {
             PopUpInteraction = Instantiate(gameManager.PopUpToucheInteraction, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag(transform.parent.GetComponent<Player>().playerId == 0 ? "CanvasJ1" : "CanvasJ2").transform);
-
-            PopUpInteraction.transform.localPosition = new Vector3((transform.parent.GetComponent<Player>().playerId == 0 ? -275.25f : 275.25f), 0f, 0f);
 
             PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Appuyer sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
 
