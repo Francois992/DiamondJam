@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8086566574097527079}
   - component: {fileID: 8086566574097527078}
   - component: {fileID: 8086566574097527073}
+  - component: {fileID: 3340837068658576910}
   m_Layer: 0
   m_Name: Antidode
   m_TagString: Antidode
@@ -60,6 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 85db6e21e674b8f4a94f6926220209c8, type: 2}
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -96,3 +98,17 @@ CapsuleCollider:
   m_Height: 3.7884107
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3340837068658576910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086566574097527072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c651032bd9d942abc2de6f9d4fe32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 20
+  ObjetInteractible: 1

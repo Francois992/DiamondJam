@@ -32,8 +32,6 @@ public class Player_Trigger_Script : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Antidode")) SceneManager.LoadScene("Scene_Victoire");
-
         if (other.CompareTag("Oxygene"))
         {
             if (other.GetComponent<Oxygene_Script>().Oxygene < 100) transform.parent.GetComponent<Player>().enVie = false; 
@@ -64,15 +62,9 @@ public class Player_Trigger_Script : MonoBehaviour
             PopUpInteraction.transform.localPosition = new Vector3((transform.parent.GetComponent<Player>().playerId == 0 ? -275.25f : 275.25f), 0f, 0f);
 
             PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Appuyer sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
-        }
 
-        if (other.transform.GetComponent<MaintainLever>())
-        {
-            PopUpInteraction = Instantiate(gameManager.PopUpToucheInteraction, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-
-            PopUpInteraction.transform.localPosition = new Vector3((transform.parent.GetComponent<Player>().playerId == 0 ? -275.25f : 275.25f), 0f, 0f);
-
-            PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Maintenez sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
+            if (other.transform.GetComponent<MaintainLever>()) PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Maintenez sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
+            if (other.CompareTag("Antidode")) PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Appuyer sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour utiliser la seringue";
         }
     }
 

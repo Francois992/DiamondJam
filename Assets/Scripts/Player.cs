@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using System.Runtime.ExceptionServices;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -153,6 +154,15 @@ public class Player : MonoBehaviour
                         hit.collider.gameObject.SetActive(false);
                     }
                     else Debug.Log("Objet déjà dans l'inventaire du Player");
+                }
+            }
+
+            if (hit.transform.CompareTag("Antidode"))
+            {
+                if (playerController.GetButtonDown("Interact"))
+                {
+                    Destroy(transform.GetChild(2).GetComponent<Player_Trigger_Script>().PopUpInteraction);
+                    SceneManager.LoadScene("Scene_Victoire");
                 }
             }
         }
