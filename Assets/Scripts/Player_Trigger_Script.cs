@@ -65,6 +65,15 @@ public class Player_Trigger_Script : MonoBehaviour
 
             PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Appuyer sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
         }
+
+        if (other.transform.GetComponent<MaintainLever>())
+        {
+            PopUpInteraction = Instantiate(gameManager.PopUpToucheInteraction, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+
+            PopUpInteraction.transform.localPosition = new Vector3((transform.parent.GetComponent<Player>().playerId == 0 ? -275.25f : 275.25f), 0f, 0f);
+
+            PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Maintenez sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
+        }
     }
 
     private void OnTriggerStay(Collider other)
