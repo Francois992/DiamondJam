@@ -258,15 +258,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   timeDead: 2
+  timerD: 0
   timeMove: 1.5
   move: 1
   right: 1
   destination: []
   stay: []
-  agent: {fileID: 0}
+  agent: {fileID: 304382164}
   distReaction: 2
   attracted: 0
   dead: 0
+  laser: 0
+  material: {fileID: 2100000, guid: fd741c8b2076771478902d764b1461e5, type: 2}
 --- !u!195 &304382164
 NavMeshAgent:
   m_ObjectHideFlags: 0
