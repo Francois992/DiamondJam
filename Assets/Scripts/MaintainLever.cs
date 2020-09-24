@@ -11,16 +11,7 @@ public class MaintainLever : LevierScript
     // Update is called once per frame
     void Update()
     {
-        if (Activated)
-        {
-            sas_Script.Ouvert = true;
-
-        }
-        else
-        {
-            sas_Script.Ouvert = false;
-
-        }
+        
 
         if(user != null && Vector3.Distance(transform.position, user.transform.position) > 2)
         {
@@ -31,10 +22,11 @@ public class MaintainLever : LevierScript
 
     public override void InteractionSas()
     {
-        Activated = true;
+        sas_Script.Ouvert = true;
     }
     public void StopInteractionSas()
     {
-        Activated = false;
+        
+        sas_Script.Ouvert = false;
     }
 }
