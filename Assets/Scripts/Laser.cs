@@ -29,8 +29,8 @@ public class Laser : MonoBehaviour
 
                     if(hit.collider.tag == "Pnj")
                     {
-                        Debug.Log("Touché PNJ");
-                        hit.collider.gameObject.transform.GetComponent<Pnj>().timeDead = 0.5f;
+                        
+                        hit.collider.gameObject.transform.GetComponent<Pnj>().timeDead = hit.collider.gameObject.transform.GetComponent<Pnj>().timeLaserDeath;
                         hit.collider.gameObject.transform.GetComponent<Pnj>().laser =  true;
                         
                     }

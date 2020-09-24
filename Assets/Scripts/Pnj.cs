@@ -8,6 +8,7 @@ public class Pnj : MonoBehaviour
 
     public Vector3 position;
     public float timeDead = 2f;
+    public float timeLaserDeath = 0.5f;
     public float timerD = 0f;
 
     public float timeMove = 1.5f;
@@ -26,14 +27,20 @@ public class Pnj : MonoBehaviour
     private int indexWait = 0;
 
     public bool attracted = false;
-
+    
     public bool dead = false;
     public bool laser = false;
+
+   [SerializeField] private Material material;
+    Renderer rend;
 
     // Start is called before the first frame update
     void Start()
     {
         position = transform.position;
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+        
     }
 
     // Update is called once per frame
@@ -47,6 +54,7 @@ public class Pnj : MonoBehaviour
 
         if (laser)
         {
+            rend.sharedMaterial = material;
             Death();
         }
     }
@@ -89,12 +97,18 @@ public class Pnj : MonoBehaviour
 
         agent.speed = 0;
 
-        if (timerD >= timeDead)
+        if (laser)
+        {
+            //material.color = Color.black;
+            //Debug.Log("Pnj grillé");
+        }
+
+            if (timerD >= timeDead)
         {
             gameObject.SetActive(false);
             timerD = 0;
         }
-        Debug.Log("Pnj est MORT");
+        
     }
     
     
