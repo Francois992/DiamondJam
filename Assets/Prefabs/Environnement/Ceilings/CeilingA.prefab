@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7790057595473623636}
   - component: {fileID: 8781211961664994682}
   m_Layer: 0
-  m_Name: CeilingA (2)
+  m_Name: CeilingA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: cd9c47786dad9fc489dc634fc4b74aa9, type: 2}
-  - {fileID: -6384225772109115935, guid: 739ab806ea9fed64bacda65fd9037076, type: 3}
+  - {fileID: 2100000, guid: de2d2a4cf3e07014db88427a2f59bc53, type: 2}
+  - {fileID: 2100000, guid: 449d118d485e5d9458c6423440caa701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
