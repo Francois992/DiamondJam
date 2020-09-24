@@ -57,7 +57,7 @@ public class Player_Trigger_Script : MonoBehaviour
 
         if (other.transform.GetComponent<InteractableObjects_Script>())
         {
-            PopUpInteraction = Instantiate(gameManager.PopUpToucheInteraction, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+            PopUpInteraction = Instantiate(gameManager.PopUpToucheInteraction, Vector3.zero, Quaternion.identity, GameObject.FindGameObjectWithTag(transform.parent.GetComponent<Player>().playerId == 0 ? "CanvasJ1" : "CanvasJ2").transform);
 
             PopUpInteraction.transform.localPosition = new Vector3((transform.parent.GetComponent<Player>().playerId == 0 ? -275.25f : 275.25f), 0f, 0f);
 
