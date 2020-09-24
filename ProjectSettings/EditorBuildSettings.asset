@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_Defaite.unity
     guid: c60d9fbc15a42674483d9200287a4dab
+  - enabled: 0
+    path: Assets/Scenes/GD/EloiTestLD.unity
+    guid: d6464544ca3ba4134ba25f13955b8b7a
+  - enabled: 1
+    path: Assets/Scenes/Scene_Main.unity
+    guid: 746382da4581d35449df9b53655b3131
   m_configObjects: {}
