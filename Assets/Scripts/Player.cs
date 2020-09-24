@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public int playerId = 0;
 
     public bool enVie;
+    public bool respawnPlayer;
 
     private Rewired.Player playerController ;
 
@@ -38,9 +39,8 @@ public class Player : MonoBehaviour
 
     public List<GameObject> inventairePlayer = new List<GameObject>();
 
-    GameManager gameManager;
-
     public string NomToucheInteraction;
+
     
     
     // Start is called before the first frame update
@@ -50,22 +50,27 @@ public class Player : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
 
-        gameManager = FindObjectOfType<GameManager>();
-
-        NomToucheInteraction = playerController.controllers.maps.GetFirstButtonMapWithAction("Interact", true).elementIdentifierName;
-
         enVie = true;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateCamView();
+        if (respawnPlayer == true) 
+        { 
+            enVie = respawnPlayer;
+            respawnPlayer = false;
+        }
 
-        UpdatePos();
+        if (enVie == true)
+        {
+            UpdateCamView();
 
-        checkForInteractible();
+            UpdatePos();
+
+            checkForInteractible();
+        }
+        else return;
     }
 
     private void UpdateCamView()

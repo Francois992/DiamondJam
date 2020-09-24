@@ -142,6 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ouvert: 0
+  initialPosY: 0
+  finalPosY: 2.5
+  OxygeneZone: {fileID: 0}
 --- !u!1 &688792857121712488
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,3 +349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ouvert: 0
+  initialPosY: 0
+  finalPosY: 2.5
+  OxygeneZone: {fileID: 0}
