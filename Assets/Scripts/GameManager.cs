@@ -14,10 +14,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject PopUpToucheInteraction;
 
+    public GameObject menuDefaite;
+
     // Start is called before the first frame update
     void Start()
     {
         sas_script = FindObjectOfType<Sas_Script>();
+        menuDefaite.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             if(player.GetComponent<Player>().enVie == false)
             {
-                SceneManager.LoadScene("Scene_Defaite");
+                menuDefaite.SetActive(true);
             }
         }
     }

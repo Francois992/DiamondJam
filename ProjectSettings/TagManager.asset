@@ -13,6 +13,7 @@ TagManager:
   - UpGrav
   - Laser
   - Canvas
+  - GM
   layers:
   - Default
   - TransparentFX
