@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   PopUpToucheInteraction: {fileID: 2461329618347913846, guid: 83999b11ffc3a494e95ee10e4353adeb, type: 3}
+  menuDefaite: {fileID: 2200943076124069748, guid: f6466f28bd1cbb5409874e5d0fa29c1f, type: 3}
 --- !u!114 &1261285189566967824
 MonoBehaviour:
   m_ObjectHideFlags: 0

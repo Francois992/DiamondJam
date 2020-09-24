@@ -120,9 +120,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 460931320428006177, guid: ede55d3308a940841a129b8542d5b68a, type: 3}
+      - m_Target: {fileID: 1261285189566967824, guid: ede55d3308a940841a129b8542d5b68a, type: 3}
         m_TargetAssemblyTypeName: Menu_Script, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: RetourMenuPrincipal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -623,9 +623,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 460931320428006177, guid: ede55d3308a940841a129b8542d5b68a, type: 3}
+      - m_Target: {fileID: 1261285189566967824, guid: ede55d3308a940841a129b8542d5b68a, type: 3}
         m_TargetAssemblyTypeName: Menu_Script, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: DefaiteRejouer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
