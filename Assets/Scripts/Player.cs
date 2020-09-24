@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         enVie = true;
+
+        NomToucheInteraction = playerController.controllers.maps.GetFirstElementMapWithAction("Interact", true).elementIdentifierName;
     }
 
     // Update is called once per frame
