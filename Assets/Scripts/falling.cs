@@ -10,10 +10,12 @@ public class falling : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
             {
-                if (!source.isPlaying)
+
+            AudioManager.instance.Stop("MainMusic");
+
+            if (!source.isPlaying)
                 {
                     source.PlayOneShot(fallingZic);
                 }
