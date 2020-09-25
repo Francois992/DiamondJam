@@ -8,7 +8,6 @@ public class Pnj_Trigger : MonoBehaviour
     public SphereCollider sphere;   //Collider désigné
     public Vector3 scale;           //Taille de la zone dangereuse
 
-
     // Start is called before the first frame update
     void Start()
     {

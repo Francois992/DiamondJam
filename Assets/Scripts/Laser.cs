@@ -39,6 +39,8 @@ public class Laser : MonoBehaviour
                     {
                         Debug.Log("Touché Player");
                         hit.collider.gameObject.transform.GetComponent<Player>().enVie = false;
+                        hit.collider.gameObject.transform.GetComponent<Player>().animator.SetBool("isDead", true);
+
                     }
                     else
                     {

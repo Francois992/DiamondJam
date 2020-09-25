@@ -34,13 +34,16 @@ public class Pnj : MonoBehaviour
    [SerializeField] private Material material;
     Renderer rend;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         position = transform.position;
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
-        
+        //rend = GetComponent<Renderer>();
+        //rend.enabled = true;
+
+        animator.SetBool("isDead", false);
     }
 
     // Update is called once per frame
@@ -50,6 +53,11 @@ public class Pnj : MonoBehaviour
         if (!attracted)
         {
             Move();
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
         }
 
         if (laser)
@@ -79,6 +87,8 @@ public class Pnj : MonoBehaviour
                 dest = (dest + 1) % (destination.Count);
                 timerW = 0;
             }
+
+            
         }
         else
         {
@@ -91,6 +101,8 @@ public class Pnj : MonoBehaviour
 
     public void Death()
     {
+        animator.SetBool("isDead", true);
+
         move = false;
         dead = true;
         timerD += Time.deltaTime;
