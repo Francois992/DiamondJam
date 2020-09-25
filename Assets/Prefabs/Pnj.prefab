@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pnj: {fileID: 1724786197442117795}
   sphere: {fileID: 829313757}
-  scale: {x: 4, y: 0.1, z: 4}
+  scale: {x: 2, y: 0.1, z: 2}
 --- !u!54 &8697881551561956097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -258,12 +258,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   timeDead: 2
+  timeLaserDeath: 0.5
   timerD: 0
   timeMove: 1.5
   move: 1
   right: 1
-  destination: []
-  stay: []
+  destination:
+  - {fileID: 0}
+  stay:
+  - 0
   agent: {fileID: 304382164}
   distReaction: 2
   attracted: 0

@@ -11,8 +11,8 @@ public class Pnj : MonoBehaviour
     public float timeLaserDeath = 0.5f;
     public float timerD = 0f;
 
-    public float timeMove = 1.5f;
-    private float timerM = 0f;
+    //public float timeMove = 1.5f;
+    //private float timerM = 0f;
     public bool move = true;
     public bool right = true;
 
@@ -96,12 +96,7 @@ public class Pnj : MonoBehaviour
         timerD += Time.deltaTime;
 
         agent.speed = 0;
-
-        if (laser)
-        {
-            //material.color = Color.black;
-            //Debug.Log("Pnj grillé");
-        }
+       
 
             if (timerD >= timeDead)
         {
@@ -122,5 +117,5 @@ public class Pnj : MonoBehaviour
     {
         attracted = false;
     }
-
+    
 }

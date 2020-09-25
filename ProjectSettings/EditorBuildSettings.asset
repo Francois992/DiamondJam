@@ -14,10 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_Defaite.unity
     guid: c60d9fbc15a42674483d9200287a4dab
-  - enabled: 0
-    path: Assets/Scenes/GD/EloiTestLD.unity
-    guid: d6464544ca3ba4134ba25f13955b8b7a
   - enabled: 1
     path: Assets/Scenes/Scene_Main.unity
     guid: 746382da4581d35449df9b53655b3131
+  - enabled: 1
+    path: Assets/Scenes/GD/Level1.unity
+    guid: 645b6175449aa43f5a19e216a6255a77
+  - enabled: 1
+    path: Assets/Scenes/GD/Level2.unity
+    guid: 67a72c4a641e94d688eaaa0aacb0ed39
+  - enabled: 1
+    path: Assets/Scenes/GD/Level3.unity
+    guid: ac2efd89762244c77b199803b6933fe8
   m_configObjects: {}
