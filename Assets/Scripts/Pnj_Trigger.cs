@@ -9,8 +9,6 @@ public class Pnj_Trigger : MonoBehaviour
     public Vector3 scale;           //Taille de la zone dangereuse
     
 
-    public Animator animator;
-
     // Start is called before the first frame update
     void Start()
     {

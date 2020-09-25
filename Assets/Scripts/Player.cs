@@ -197,6 +197,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        isInteracting = false;
     }
 
     //Fonction pour enlever les items de l'inventaire | il faudra simplement changer le x.name en fonction de l'item voulu
