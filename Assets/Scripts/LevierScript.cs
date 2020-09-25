@@ -29,16 +29,16 @@ public class LevierScript : MonoBehaviour
         {
             if (laser.activation)
             {
-                laser.activation = true;
+                laser.activation = false;
 
             }
             else
             {
-                laser.activation = false;
+                laser.activation = true;
 
             }
         }
-        else if (sas_Script)
+        else if (sas_Script != null)
         {
             if (!sas_Script.Ouvert)
             {
