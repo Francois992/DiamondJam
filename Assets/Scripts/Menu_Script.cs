@@ -77,7 +77,7 @@ public class Menu_Script : MonoBehaviour
     {
         foreach (GameObject player in gameObject.GetComponent<GameManager>().Players)
         {
-            player.transform.localPosition = new Vector3(gm.lastPositionCheckpoint.x + (player.GetComponent<Player>().playerId == 0 ? 2 : -2), gm.lastPositionCheckpoint.y, gm.lastPositionCheckpoint.z);
+            player.transform.localPosition = new Vector3(gm.lastPositionCheckpoint.x + (player.GetComponent<Player>().playerId == 0 ? 5 : -5), gm.lastPositionCheckpoint.y, gm.lastPositionCheckpoint.z);
             StartCoroutine(WaitToRespawn());
         }
     }
