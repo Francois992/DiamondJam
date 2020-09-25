@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activation: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 3584
 --- !u!120 &5882330418166534218
 LineRenderer:
   m_ObjectHideFlags: 0

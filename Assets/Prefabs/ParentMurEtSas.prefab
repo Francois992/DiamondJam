@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 688792856374740261}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParentMurEtSas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 688792856987623206}
   - component: {fileID: 688792856987623207}
   - component: {fileID: 2039868719}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 688792857121712500}
   - component: {fileID: 688792857121712501}
   - component: {fileID: 688792857121712502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 688792858110338707}
   - component: {fileID: 688792858110338708}
   - component: {fileID: 688792858110338705}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mur2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

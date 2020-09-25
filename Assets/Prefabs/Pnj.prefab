@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 829313757}
   - component: {fileID: 829313756}
   - component: {fileID: 8697881551561956097}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Zone
   m_TagString: Pnj
   m_Icon: {fileID: 0}
@@ -260,7 +260,6 @@ MonoBehaviour:
   timeDead: 2
   timeLaserDeath: 0.5
   timerD: 0
-  timeMove: 1.5
   move: 1
   right: 1
   destination:

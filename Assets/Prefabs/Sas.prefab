@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3057416476546218747}
   - component: {fileID: 4014825970519436554}
   - component: {fileID: 317231604199410531}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ouvert: 0
+  initialPosY: 0
+  finalPosY: 2.5
+  OxygeneZone: {fileID: 0}

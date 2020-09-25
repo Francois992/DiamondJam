@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7299501214159558214}
   - component: {fileID: 7299501214159558209}
   - component: {fileID: 7299501214159558212}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ouvert: 0
+  initialPosY: 0
+  finalPosY: 2.5
+  OxygeneZone: {fileID: 0}
 --- !u!1 &7299501214510277962
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +125,7 @@ GameObject:
   - component: {fileID: 7299501214510277966}
   - component: {fileID: 7299501214510277961}
   - component: {fileID: 7299501214510277960}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mur1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7299501214559162510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParentMurEtPorte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +252,7 @@ GameObject:
   - component: {fileID: 7299501214648827793}
   - component: {fileID: 7299501214648827798}
   - component: {fileID: 2031950157}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ZoneDetectionPorte
   m_TagString: Porte
   m_Icon: {fileID: 0}
@@ -311,7 +314,7 @@ GameObject:
   - component: {fileID: 7299501215370839563}
   - component: {fileID: 7299501215370839562}
   - component: {fileID: 7299501215370839557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mur2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
