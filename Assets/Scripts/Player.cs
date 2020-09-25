@@ -41,7 +41,8 @@ public class Player : MonoBehaviour
 
     public string NomToucheInteraction;
 
-    
+    public Animator animator;
+    public bool isInteracting = false;
     
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         enVie = true;
+
+        animator.SetBool("isDead", false);
 
         NomToucheInteraction = playerController.controllers.maps.GetFirstElementMapWithAction("Interact", true).elementIdentifierName;
     }
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
         { 
             enVie = respawnPlayer;
             respawnPlayer = false;
+            animator.SetBool("isDead", false);
         }
 
         if (enVie == true)
@@ -89,6 +93,11 @@ public class Player : MonoBehaviour
 
     private void UpdatePos()
     {
+        if (isInteracting)
+        {
+            return;
+        }
+
         if(!inUpGrav) isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundMask);
         else isGrounded = false;
         
@@ -105,6 +114,14 @@ public class Player : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (movePos.x != 0 || movePos.z != 0)
+        {
+            
+            animator.SetBool("isRunning", true);
+        }
+        else animator.SetBool("isRunning", false);
+        
     }
 
     private void checkForInteractible()
@@ -115,6 +132,8 @@ public class Player : MonoBehaviour
         {
             if (hit.transform.GetComponent<LevierScript>())
             {
+                
+
                 if (playerController.GetButton("Interact") && hit.transform.GetComponent<MaintainLever>())
                 {
                     MaintainLever interactible = hit.transform.GetComponent<MaintainLever>();
@@ -123,6 +142,7 @@ public class Player : MonoBehaviour
                     {
                         interactible.user = this;
                         interactible.InteractionSas();
+                        isInteracting = true;
                     }
                     
                 }
@@ -134,6 +154,7 @@ public class Player : MonoBehaviour
                     {
                         interactible.user = null;
                         interactible.StopInteractionSas();
+                        isInteracting = false;
                     }
                 }
 
@@ -143,12 +164,15 @@ public class Player : MonoBehaviour
 
                     interactible.InteractionSas();
                 }
- 
+
+                //
+
             }
 
             if (hit.transform.CompareTag("ObjetInventaire"))
             {
-                Debug.Log(NomToucheInteraction);
+                
+
                 if (playerController.GetButtonDown("Interact"))
                 {
                     GameObject item = inventairePlayer.Find(x => x.name == hit.collider.gameObject.name);

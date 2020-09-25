@@ -82,13 +82,17 @@ public class Player_Trigger_Script : MonoBehaviour
 
         if (other.CompareTag("Oxygene"))
         {
-            if (other.GetComponent<Oxygene_Script>().Oxygene < 100) transform.parent.GetComponent<Player>().enVie = false; 
-            
+            if (other.GetComponent<Oxygene_Script>().Oxygene < 100)
+            {
+                transform.parent.GetComponent<Player>().enVie = false;
+                transform.parent.GetComponent<Player>().animator.SetBool("isDead", true); 
+            }
         }
 
         if (other.CompareTag("Pnj") || (other.transform.parent != null && other.transform.parent.CompareTag("Player")))
         {
             transform.parent.GetComponent<Player>().enVie = false;
+            transform.parent.GetComponent<Player>().animator.SetBool("isDead", true);
 
             Debug.Log("mort");
         }
@@ -96,6 +100,7 @@ public class Player_Trigger_Script : MonoBehaviour
         if (other.CompareTag("KillZone"))
         {
             transform.parent.GetComponent<Player>().enVie = false;
+            transform.parent.GetComponent<Player>().animator.SetBool("isDead", true);
         }
 
         if (other.CompareTag("UpGrav"))
@@ -125,8 +130,11 @@ public class Player_Trigger_Script : MonoBehaviour
 
         if (other.CompareTag("Oxygene"))
         {
-            if (other.GetComponent<Oxygene_Script>().Oxygene < 100) transform.parent.GetComponent<Player>().enVie = false;
-            
+            if (other.GetComponent<Oxygene_Script>().Oxygene < 100)
+            {
+                transform.parent.GetComponent<Player>().enVie = false;
+                transform.parent.GetComponent<Player>().animator.SetBool("isDead", true);
+            }
         }
 
         if (other.CompareTag("UpGrav"))
