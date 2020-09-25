@@ -40,8 +40,8 @@ public class Pnj : MonoBehaviour
     void Start()
     {
         position = transform.position;
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
+        //rend = GetComponent<Renderer>();
+        //rend.enabled = true;
 
         animator.SetBool("isDead", false);
     }
