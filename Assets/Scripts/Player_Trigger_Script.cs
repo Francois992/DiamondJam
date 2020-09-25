@@ -119,6 +119,8 @@ public class Player_Trigger_Script : MonoBehaviour
             if (other.transform.GetComponent<MaintainLever>()) PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Maintenez sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour interagir";
             if (other.CompareTag("Antidode")) PopUpInteraction.transform.GetChild(0).GetComponent<Text>().text = "Appuyer sur " + transform.parent.GetComponent<Player>().NomToucheInteraction + " pour utiliser la seringue";
         }
+
+        if (other.CompareTag("Antidode")) SceneManager.LoadScene("Scene_Victoire");
     }
 
     private void OnTriggerStay(Collider other)
