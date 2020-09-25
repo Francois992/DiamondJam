@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class Menu_Script : MonoBehaviour
 {
@@ -15,11 +17,19 @@ public class Menu_Script : MonoBehaviour
 
     GameMaster gm;
 
+    [SerializeField] private VideoPlayer intro;
+    [SerializeField] private Image fadeVideo;
+
     private void Start()
     {
         SurMenuPrincipal = true;
-
+        fadeVideo.DOFade(0, 0.1f);
         gm = FindObjectOfType<GameMaster>();
+    }
+
+    private void Awake()
+    {
+        GameObject.FindGameObjectWithTag("Canvas").SetActive(true);
     }
 
     public void QuitterLeJeu()
@@ -32,6 +42,18 @@ public class Menu_Script : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    public void FirstStartGame()
+    {
+        fadeVideo.DOFade(1, 0.5f).OnComplete(() => { intro.Play(); GameObject.FindGameObjectWithTag("Canvas").SetActive(false); });
+        StartCoroutine(StartGame());
+        //intro.Play();
+    }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(61f);
+        SceneManager.LoadScene("Level1");
+    }
     public void RetourMenuPrincipal()
     {
         SceneManager.LoadScene("Menu_Principal");
@@ -40,15 +62,15 @@ public class Menu_Script : MonoBehaviour
     public void RegleDuJeu()
     {
         SurMenuPrincipal = !SurMenuPrincipal;
-        MenuPrincipal.DOLocalMoveX(SurMenuPrincipal == true ? 0f : -1101f, 0.5f);
-        MenuCommentJouer.DOLocalMoveX(SurMenuPrincipal == false ? 0f : 1101f, 0.5f);
+        MenuPrincipal.DOLocalMoveX(SurMenuPrincipal == true ? 0f : -1920f, 0.5f);
+        MenuCommentJouer.DOLocalMoveX(SurMenuPrincipal == false ? 0f : 1920f, 0.5f);
     }
 
     public void Credits()
     {
         SurMenuPrincipal = !SurMenuPrincipal;
-        MenuPrincipal.DOLocalMoveX(SurMenuPrincipal == true ? 0f : -1101f, 0.5f);
-        MenuCredits.DOLocalMoveX(SurMenuPrincipal == false ? 0f : 1101f, 0.5f);
+        MenuPrincipal.DOLocalMoveX(SurMenuPrincipal == true ? 0f : -1920f, 0.5f);
+        MenuCredits.DOLocalMoveX(SurMenuPrincipal == false ? 0f : 1920f, 0.5f);
     }
 
     public void DefaiteRejouer()
