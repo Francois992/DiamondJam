@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 829313757}
   - component: {fileID: 829313756}
   - component: {fileID: 8697881551561956097}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Zone
   m_TagString: Pnj
   m_Icon: {fileID: 0}
