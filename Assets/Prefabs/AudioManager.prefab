@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
+  - name: MainMusic
+    clip: {fileID: 8300000, guid: 6b607055f15bb4346ad78c3c09b8e9dc, type: 3}
     source: {fileID: 0}
-    playOnAwake: 0
-    loop: 0
+    playOnAwake: 1
+    loop: 1
   - name: 
     clip: {fileID: 0}
     source: {fileID: 0}
