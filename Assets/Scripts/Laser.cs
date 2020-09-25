@@ -6,6 +6,7 @@ public class Laser : MonoBehaviour
 {
     public bool activation = false;
     private LineRenderer lr;
+    public LayerMask layerMask;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class Laser : MonoBehaviour
             lr.enabled = true;
             lr.SetPosition(0, transform.position);
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 1000f, layerMask))
             {
                 if (hit.collider)
                 {
@@ -29,18 +30,19 @@ public class Laser : MonoBehaviour
 
                     if(hit.collider.tag == "Pnj")
                     {
-                        hit.collider.GetComponent<Pnj>().timeDead = hit.collider.GetComponent<Pnj>().timeLaserDeath;
-                        hit.collider.GetComponent<Pnj>().laser = true;
-
-                       // hit.collider.gameObject.transform.GetComponent<Pnj>().timeDead = hit.collider.gameObject.transform.GetComponent<Pnj>().timeLaserDeath;
-                       // hit.collider.gameObject.transform.GetComponent<Pnj>().laser =  true;
+                        hit.collider.gameObject.transform.GetComponent<Pnj>().timeDead = hit.collider.gameObject.transform.GetComponent<Pnj>().timeLaserDeath;
+                        hit.collider.gameObject.transform.GetComponent<Pnj>().laser =  true;
+                        
                         
                     }
-
-                    if(hit.collider.tag == "Player")
+                    else if(hit.collider.tag == "Player")
                     {
                         Debug.Log("Touché Player");
                         hit.collider.gameObject.transform.GetComponent<Player>().enVie = false;
+                    }
+                    else
+                    {
+
                     }
                 }
             }

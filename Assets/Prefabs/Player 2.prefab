@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6824889787433909368}
   - component: {fileID: 2988743781085635201}
   - component: {fileID: 6610089753911715659}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopUpInteraction: {fileID: 0}
+  maxDistance: 100
 --- !u!54 &1536566342
 Rigidbody:
   m_ObjectHideFlags: 0

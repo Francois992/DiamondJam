@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopUpInteraction: {fileID: 0}
+  maxDistance: 100
 --- !u!54 &1771955646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ GameObject:
   - component: {fileID: 5187854739353259512}
   - component: {fileID: 3472893094122115841}
   - component: {fileID: 4824435884295280331}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -195,6 +196,7 @@ MonoBehaviour:
   gravity: -9
   playerId: 0
   enVie: 0
+  respawnPlayer: 0
   inUpGrav: 0
   groundCheck: {fileID: 8772006114136998732}
   groundMask:
