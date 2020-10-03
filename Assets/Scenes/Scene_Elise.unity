@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d82ffbe4197e92d4a8b7924c8b19b516, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -605,6 +605,7 @@ MonoBehaviour:
   dead: 0
   laser: 0
   material: {fileID: 2100000, guid: fd741c8b2076771478902d764b1461e5, type: 2}
+  animator: {fileID: 0}
 --- !u!54 &446365144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2097,6 +2098,7 @@ MonoBehaviour:
   dead: 0
   laser: 0
   material: {fileID: 2100000, guid: fd741c8b2076771478902d764b1461e5, type: 2}
+  animator: {fileID: 0}
 --- !u!195 &1011873272
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2624,6 +2626,18 @@ PrefabInstance:
     - target: {fileID: 829313755, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 829313758, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 282388f6024736b43af6d67823fab719, type: 2}
+    - target: {fileID: 829313760, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.103
+      objectReference: {fileID: 0}
+    - target: {fileID: 829313760, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.664
       objectReference: {fileID: 0}
     - target: {fileID: 1724786197442117793, guid: 2f4613d584de25e4382ce4ec255563a4, type: 3}
       propertyPath: m_LocalPosition.x
